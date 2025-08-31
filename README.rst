@@ -1,21 +1,3 @@
-.. image:: https://img.shields.io/pypi/v/django-slick-reporting.svg
-    :target: https://pypi.org/project/django-slick-reporting
-
-.. image:: https://img.shields.io/pypi/pyversions/django-slick-reporting.svg
-    :target: https://pypi.org/project/django-slick-reporting
-
-.. image:: https://img.shields.io/readthedocs/django-slick-reporting
-    :target: https://django-slick-reporting.readthedocs.io/
-
-.. image:: https://api.travis-ci.com/ra-systems/django-slick-reporting.svg?branch=master
-    :target: https://app.travis-ci.com/github/ra-systems/django-slick-reporting
-
-.. image:: https://img.shields.io/codecov/c/github/ra-systems/django-slick-reporting
-    :target: https://codecov.io/gh/ra-systems/django-slick-reporting
-
-
-
-
 Django Slick Reporting
 ======================
 
@@ -91,15 +73,6 @@ Let's start by a "Group by" report. This will generate a report how much quantit
     # then, in urls.py
     path("total-sales-report", TotalProductSales.as_view())
 
-
-
-With this code, you will get something like this:
-
-.. image:: https://i.ibb.co/SvxTM23/Selection-294.png
-    :target: https://i.ibb.co/SvxTM23/Selection-294.png
-    :alt: Shipped in View Page
-
-
 Time Series
 -----------
 
@@ -147,11 +120,6 @@ Example: How much was sold in value for each product monthly within a date perio
             ),
         ]
 
-
-.. image:: https://github.com/ra-systems/django-slick-reporting/blob/develop/docs/source/topics/_static/timeseries.png?raw=true
-    :alt: Time Series Report
-    :align: center
-
 Cross Tab
 ---------
 Use crosstab reports, also known as matrix reports, to show the relationships between three or more query items.
@@ -182,12 +150,6 @@ Crosstab reports show data in rows and columns with information summarized at th
                 ComputationField.create(Sum, "value", verbose_name=_("Total Value")),
             ]
 
-
-.. image:: https://github.com/ra-systems/django-slick-reporting/blob/develop/docs/source/topics/_static/crosstab.png?raw=true
-   :alt: Homepage
-   :align: center
-
-
 Low level
 ---------
 
@@ -215,88 +177,8 @@ You can interact with the `ReportGenerator` using same syntax as used with the `
 
 This is just a scratch of what you can do and customize.
 
-Demo site
----------
-
-Available on `Django Slick Reporting <https://django-slick-reporting.com/>`_
-
-
-You can also use locally
-
-.. code-block:: console
-
-        # clone the repo
-        git clone https://github.com/ra-systems/django-slick-reporting.git
-        # create a virtual environment and activate it
-        python -m venv /path/to/new/virtual/environment
-        source /path/to/new/virtual/environment/bin/activate
-
-        cd django-slick-reporting/demo_proj
-        pip install -r requirements.txt
-        python manage.py migrate
-        python manage.py create_entries
-        python manage.py runserver
-
-the ``create_entries`` command will generate data for the demo app
-
-Documentation
--------------
-
-Available on `Read The Docs <https://django-slick-reporting.readthedocs.io/en/latest/>`_
-
-You can run documentation locally
-
-.. code-block:: console
-
-    <activate your virtual environment>
-    cd docs
-    pip install -r requirements.txt
-    sphinx-build -b html source build
-
-
 Road Ahead
 ----------
 
 * Continue on enriching the demo project
 * Add the dashboard capabilities
-
-
-Running tests
------------------
-Create a virtual environment (maybe with `virtual slick_reports_test`), activate it; Then ,
- 
-.. code-block:: console
-    
-    $ git clone git+git@github.com:ra-systems/django-slick-reporting.git
-    $ cd tests
-    $ python -m pip install -e ..
-
-    $ python runtests.py
-    #     Or for Coverage report
-    $ coverage run --include=../* runtests.py [-k]
-    $ coverage html
-
-
-Support & Contributing
-----------------------
-
-Please consider star the project to keep an eye on it. Your PRs, reviews are most welcome and needed.
-
-We honor the well formulated `Django's guidelines <https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/unit-tests/>`_ to serve as contribution guide here too.
-
-
-Authors
---------
-
-* **Ramez Ashraf** - *Initial work* - `RamezIssac <https://github.com/RamezIssac>`_
-
-Cross Reference
----------------
-
-If you like this package, chances are you may like those packages too!
-
-`Django Tabular Permissions <https://github.com/RamezIssac/django-tabular-permissions>`_ Display Django permissions in a HTML table that is translatable and easy customized.
-
-`Django ERP Framework <https://github.com/ra-systems/RA>`_ A framework to build business solutions with ease.
-
-If you find this project useful or promising , You can support us by a github ⭐
